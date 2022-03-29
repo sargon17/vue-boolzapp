@@ -2,6 +2,7 @@
   --wa-bg-gray: #dbdbd3;
   --wa-bg-green: #009688;
   --wa-bg-headers-gray: #eaeaea;
+  --wa-bg-banner: #8edafc;
 
   --wa-text-black: #101010;
   --wa-text-gray: #393939;
@@ -56,7 +57,11 @@
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
+  border-bottom: 1px solid #d5d5d5;
+  background: #f7f7f7;
 }
+
+/* header */
 .wa__contacts__header {
   width: 100%;
   height: 60px;
@@ -64,7 +69,6 @@
   justify-content: space-between;
   align-items: center;
   background: var(--wa-bg-headers-gray);
-  border-bottom: 1px solid #d5d5d5;
 }
 .wa__contacts__user-info {
   width: 100%;
@@ -75,6 +79,7 @@
   gap: 10px;
   padding: 0 10px;
 }
+/* todo riutilizzare immagine profilo */
 .wa__contacts__user-info__img {
   width: 50px;
   height: 50px;
@@ -120,6 +125,129 @@
   font-size: 1.2rem;
   color: var(--wa-text-clear-gray);
 }
+/* / header */
+/* banner */
+.wa__contacts__notification__banner {
+  width: 100%;
+  height: 60px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  background: var(--wa-bg-banner);
+  padding: 10px;
+  gap: 10px;
+}
+.wa__contacts__notification__banner__icon {
+  width: 40px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+.wa__contacts__notification__banner__icon i {
+  font-size: 1.2rem;
+  color: var(--wa-bg-banner);
+}
+.wa__contacts__notification__banner__text p {
+  font-weight: 500;
+}
+.wa__contacts__notification__banner__text a {
+  color: var(--wa-text-clear-gray);
+  text-decoration: underline;
+  font-size: 0.9rem;
+}
+/* / banner */
+/* search */
+.wa__contacts__search-section {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #f7f7f7;
+  border-bottom: 1px solid #d5d5d5;
+  padding: 5px;
+}
+.wa__contacts__search-section__input {
+  width: 100%;
+  height: 100%;
+  padding: 5px;
+  background: #fff;
+  font-size: 1.2rem;
+  color: var(--wa-text-clear-gray);
+  display: flex;
+  justify-content: start;
+  align-items: center;
+}
+.wa__contacts__search-section__input i {
+  font-size: 1.2rem;
+  color: var(--wa-text-clear-gray);
+  padding: 0 10px;
+}
+.wa__contacts__search-section__input input {
+  width: 100%;
+  height: 100%;
+  padding: 5px;
+  background: #fff;
+  /* font-size: 1.2rem; */
+  color: var(--wa-text-clear-gray);
+  border: none;
+}
+.wa__contacts__search-section__input input:focus {
+  outline: none;
+}
+/* / search */
+/* contact list */
+.wa__contacts__contacts-list-section {
+  width: 100%;
+}
+.wa__contacts__contacts-list {
+  width: 100%;
+}
+.wa__contacts__contact-item {
+  width: 100%;
+  height: 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+}
+
+/* todo riutilizzare immagine profilo */
+.wa__contacts__contact-item__img {
+  width: 50px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+.wa__contacts__contact-item__img img {
+  width: 100%;
+  aspect-ratio: 1;
+}
+.wa__contacts__contact-item__data {
+  width: 60%;
+}
+.wa__contacts__contact-item__name {
+  font-weight: 500;
+}
+.wa__contacts__contact-item__last-message p {
+  font-size: 0.9rem;
+  color: var(--wa-text-clear-gray);
+}
+.wa__contacts__contact-item__last-online {
+  align-self: flex-start;
+}
+.wa__contacts__contact-item__last-online p {
+  font-size: 0.9rem;
+  color: var(--wa-text-clear-gray);
+}
+/* / contact list */
 
 /* ------- / CONTACTS --------- */
 /* ------- MESSAGES --------- */
@@ -148,6 +276,7 @@
   padding: 0 10px;
   gap: 10px;
 }
+/* todo riutilizzare immagine profilo */
 .wa__messages__contact-img-wrapper {
   width: 10%;
   aspect-ratio: 1;
@@ -304,4 +433,6 @@
 /* / footer */
 
 /* ------- / MESSAGES --------- */
-/* --------------- / MAIN SECTIONS --------------- */ ;
+/* --------------- / MAIN SECTIONS --------------- */
+
+/* TODO semplificiare e riutilizzare immagini profilo */
