@@ -20,5 +20,10 @@ const whatsApp = new Vue({
       this.activeContact = contact;
       this.activeChat = contact.messages;
     },
+    editDateToTime: function (date) {
+      date = date.split(" ");
+      let time = date[1].split(":");
+      return `${time[0]}:${time[1]}`;
+    },
   },
 });
