@@ -123,10 +123,10 @@
                     </div>
                 </header>
                 <div class="wa__messages__body">
-                    <div :class="message.status === 'sent' ? 'wa__messages__message-container' : 'wa__messages__message-container wa__messages__message-container--sent'"
+                    <div :class="message.status === 'sent' ? 'wa__messages__message-container wa__messages__message-container--sent' : 'wa__messages__message-container'"
                         v-if="activeContact" v-for="message in activeChat">
                         <div
-                            :class="message.status === 'sent' ? 'wa__messages__message-wrapper' : 'wa__messages__message-wrapper wa__messages__message-wrapper--sent'">
+                            :class="message.status === 'sent' ? 'wa__messages__message-wrapper wa__messages__message-wrapper--sent' : 'wa__messages__message-wrapper'">
                             <div class="wa__messages__message-content">
                                 <p>{{message.message}}</p>
                             </div>
