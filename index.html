@@ -98,12 +98,12 @@
             <div class=" wa__messages-section">
                 <header class="wa__messages__header">
                     <div class="wa__messages__contact-info">
-                        <div class="wa__messages__contact-img-wrapper">
-                            <img src="./img/avatar_1.jpg" alt="">
+                        <div class="wa__messages__contact-img-wrapper" v-if="activeContact">
+                            <img :src="imgTemplate(activeContact)" :alt="activeContact.name">
                         </div>
-                        <div class="wa__messages__contact-info-wrapper">
+                        <div class="wa__messages__contact-info-wrapper" v-if="activeContact">
                             <div class="wa__messages__contact-name">
-                                <h2>John Doe</h2>
+                                <h2>{{activeContact.name}}</h2>
                             </div>
                             <div class="wa__messages__contact-status">
                                 <p>Online</p>
