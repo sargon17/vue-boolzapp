@@ -213,6 +213,11 @@
   justify-content: space-between;
   align-items: center;
   padding: 10px;
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+}
+.wa__contacts__contact-item:hover {
+  background: var(--wa-bg-gray);
 }
 
 /* todo riutilizzare immagine profilo */

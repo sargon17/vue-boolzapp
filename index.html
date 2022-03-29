@@ -8,7 +8,8 @@
     <link rel="stylesheet" href="style/cleaner.css">
     <link rel="stylesheet" href="style/style.css">
     <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
-    <script src="script/script.js" defer></script>
+
+    <script src="script/script.js" defer type="module"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap"
@@ -22,7 +23,7 @@
 <body>
     <div class="wa__bg">
         <div class="top-bg"></div>
-        <div class="wa__main-container">
+        <div class="wa__main-container" id="app">
             <div class="wa__contacts-section">
                 <!-- contacts header section -->
                 <div class="wa__contacts__header">
@@ -71,16 +72,17 @@
                 <div class="wa__contacts__contacts-list-section">
                     <div class="wa__contacts__contacts-list">
                         <!-- contact card -->
-                        <div class="wa__contacts__contact-item">
+                        <div class="wa__contacts__contact-item" v-for="contact in contacts"
+                            @click="activeThisContact(contact)">
                             <div class="wa__contacts__contact-item__img">
-                                <img src="img/avatar_io.jpg" alt="user">
+                                <img :src="imgTemplate(contact)" :alt="contact.name">
                             </div>
                             <div class="wa__contacts__contact-item__data">
                                 <div class="wa__contacts__contact-item__name">
-                                    <p>John Doe</p>
+                                    <p>{{contact.name}}</p>
                                 </div>
                                 <div class="wa__contacts__contact-item__last-message">
-                                    <p>Ciao, cosa c'è di nuovo?</p>
+                                    <p>{{lastMessage(contact)}}</p>
                                 </div>
                             </div>
                             <div class="wa__contacts__contact-item__last-online">
@@ -121,36 +123,15 @@
                     </div>
                 </header>
                 <div class="wa__messages__body">
-                    <div class="wa__messages__message-container">
-                        <div class="wa__messages__message-wrapper">
+                    <div :class="message.status === 'sent' ? 'wa__messages__message-container' : 'wa__messages__message-container wa__messages__message-container--sent'"
+                        v-if="activeContact" v-for="message in activeChat">
+                        <div
+                            :class="message.status === 'sent' ? 'wa__messages__message-wrapper' : 'wa__messages__message-wrapper wa__messages__message-wrapper--sent'">
                             <div class="wa__messages__message-content">
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam,
-                                    quidem.</p>
+                                <p>{{message.message}}</p>
                             </div>
                             <div class="wa__messages__message-time">
-                                <p>12:00</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="wa__messages__message-container wa__messages__message-container--sent ">
-                        <div class="wa__messages__message-wrapper wa__messages__message-wrapper--sent ">
-                            <div class="wa__messages__message-content">
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam,
-                                    quidem.</p>
-                            </div>
-                            <div class="wa__messages__message-time">
-                                <p>12:00</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="wa__messages__message-container">
-                        <div class="wa__messages__message-wrapper">
-                            <div class="wa__messages__message-content">
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam,
-                                    quidem.</p>
-                            </div>
-                            <div class="wa__messages__message-time">
-                                <p>12:00</p>
+                                <p>{{message.date}}</p>
                             </div>
                         </div>
                     </div>
