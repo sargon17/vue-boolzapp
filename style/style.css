@@ -1,0 +1,307 @@
+:root {
+  --wa-bg-gray: #dbdbd3;
+  --wa-bg-green: #009688;
+  --wa-bg-headers-gray: #eaeaea;
+
+  --wa-text-black: #101010;
+  --wa-text-gray: #393939;
+  --wa-text-clear-gray: #727272;
+
+  --wa-msg-bg-white: #ffffff;
+  --wa-msg-bg-green: #e6f5e6;
+}
+
+* {
+  font-size: 12px;
+  color: var(--wa-text-black);
+}
+/* ------------- BG ------------------ */
+.wa__bg {
+  width: 100%;
+  height: 100vh;
+  background: var(--wa-bg-gray);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.top-bg {
+  background: var(--wa-bg-green);
+  height: 15vh;
+  width: 100vw;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
+}
+/* ------------- / BG ------------------ */
+
+/* --------------- MAIN SECTIONS --------------- */
+.wa__main-container {
+  position: relative;
+  z-index: 2;
+  width: 80%;
+  height: 95vh;
+  display: flex;
+  background: #dbdbd3;
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.1);
+}
+/* ------- CONTACTS --------- */
+.wa__contacts-section {
+  width: 40%;
+  height: 100%;
+  border-right: 1px solid #d5d5d5;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+.wa__contacts__header {
+  width: 100%;
+  height: 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--wa-bg-headers-gray);
+  border-bottom: 1px solid #d5d5d5;
+}
+.wa__contacts__user-info {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 10px;
+  padding: 0 10px;
+}
+.wa__contacts__user-info__img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+.wa__contacts__user-info__img img {
+  width: 100%;
+  height: 100%;
+}
+.wa__contacts__user-info__name h2 {
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: var(--wa-text-black);
+}
+.wa__contacts__user-settings {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 0 10px;
+}
+.wa__contacts__user-settings__item {
+  height: 30px;
+  aspect-ratio: 1;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 10px;
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+}
+.wa__contacts__user-settings__item:hover {
+  background: var(--wa-bg-gray);
+}
+.wa__contacts__user-settings__item i {
+  font-size: 1.2rem;
+  color: var(--wa-text-clear-gray);
+}
+
+/* ------- / CONTACTS --------- */
+/* ------- MESSAGES --------- */
+.wa__messages-section {
+  width: 100%;
+  height: 100%;
+  background: url(../img/mine.jpg) repeat center center fixed;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+/* header */
+.wa__messages__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 60px;
+  background: var(--wa-bg-headers-gray);
+}
+.wa__messages__contact-info {
+  display: flex;
+  align-items: center;
+  padding: 0 10px;
+  gap: 10px;
+}
+.wa__messages__contact-img-wrapper {
+  width: 10%;
+  aspect-ratio: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  border-radius: 50%;
+}
+.wa__messages__contact-img-wrapper img {
+  width: 100%;
+  height: 100%;
+}
+.wa__messages__contact-name h2 {
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: var(--wa-text-black);
+}
+.wa__messages__contact-status p {
+  font-size: 0.8rem;
+  color: var(--wa-text-clear-gray);
+}
+
+.wa__messages__contact-icons {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  width: 10%;
+  height: 100%;
+  padding: 0 5px;
+}
+.wa__messages__contact-icon {
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  transition: all 250ms ease-in-out;
+}
+.wa__messages__contact-icon:hover {
+  background: var(--wa-bg-gray);
+}
+.wa__messages__contact-icon i {
+  font-size: 1.5rem;
+  color: var(--wa-text-clear-gray);
+}
+/* / header */
+/* messages container */
+.wa__messages__body {
+  width: 100%;
+  height: calc(100% - 120px);
+  overflow-y: scroll;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-start;
+}
+.wa__messages__message-container {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  width: 100%;
+  padding: 10px;
+}
+.wa__messages__message-wrapper {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  width: fit-content;
+  max-width: 60%;
+  padding: 10px;
+  border-radius: 10px;
+  background: var(--wa-msg-bg-white);
+  box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.1);
+}
+.wa__messages__message-container--sent {
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+.wa__messages__message-wrapper--sent {
+  justify-content: flex-end;
+  align-items: flex-end;
+  background: var(--wa-msg-bg-green);
+}
+.wa__messages__message-content {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding: 10px;
+}
+.wa__messages__message-content p {
+  font-size: 1.2rem;
+  color: var(--wa-text-black);
+}
+.wa__messages__message-time {
+  align-self: flex-end;
+  font-size: 0.8rem;
+  color: var(--wa-text-clear-gray);
+  margin-left: auto;
+}
+.wa__messages__message-time p {
+  color: var(--wa-text-clear-gray);
+  font-size: 0.8rem;
+}
+/* / messages container */
+/* footer */
+.wa__messages__footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 60px;
+  background: var(--wa-bg-headers-gray);
+  padding: 20px;
+}
+.wa__messages__footer__emojies-icon,
+.wa__messages__footer__audio-icon {
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  transition: all 250ms ease-in-out;
+}
+.wa__messages__footer__emojies-icon:hover,
+.wa__messages__footer__audio-icon:hover {
+  background: var(--wa-bg-gray);
+}
+.wa__messages__footer__emojies-icon i,
+.wa__messages__footer__audio-icon i {
+  font-size: 1.5rem;
+  color: var(--wa-text-clear-gray);
+}
+.wa__messages__footer__input-message {
+  width: 90%;
+}
+.wa__messages__footer__input-message input {
+  width: 100%;
+  height: 100%;
+  border: none;
+  outline: none;
+  background: var(--wa-msg-bg-white);
+  padding: 10px;
+  font-size: 1.2rem;
+  color: var(--wa-text-black);
+  border-radius: 3px;
+}
+/* / footer */
+
+/* ------- / MESSAGES --------- */
+/* --------------- / MAIN SECTIONS --------------- */ ;

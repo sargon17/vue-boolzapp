@@ -13,11 +13,122 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap"
         rel="stylesheet">
-    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+        integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>WhatsApp</title>
 </head>
 
 <body>
-
+    <div class="wa__bg">
+        <div class="top-bg"></div>
+        <div class="wa__main-container">
+            <div class="wa__contacts-section">
+                <div class="wa__contacts__header">
+                    <div class="wa__contacts__user-info">
+                        <div class="wa__contacts__user-info__img">
+                            <img src="img/avatar_io.jpg" alt="user">
+                        </div>
+                        <div class="wa__contacts__user-info__name">
+                            <h2>John Doe</h2>
+                        </div>
+                    </div>
+                    <div class="wa__contacts__user-settings">
+                        <div class="wa__contacts__user-settings__item">
+                            <i class="fa-regular fa-circle"></i>
+                        </div>
+                        <div class="wa__contacts__user-settings__item">
+                            <i class="fa-solid fa-message"></i>
+                        </div>
+                        <div class="wa__contacts__user-settings__item">
+                            <i class="fas fa-ellipsis-v"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="wa__contacts__notification__banner">
+                    <div class="wa__contacts__notification__banner__icon">
+                        <i class="fas fa-bell"></i>
+                    </div>
+                </div>
+            </div>
+            <!-- Messages section -->
+            <div class=" wa__messages-section">
+                <header class="wa__messages__header">
+                    <div class="wa__messages__contact-info">
+                        <div class="wa__messages__contact-img-wrapper">
+                            <img src="./img/avatar_1.jpg" alt="">
+                        </div>
+                        <div class="wa__messages__contact-info-wrapper">
+                            <div class="wa__messages__contact-name">
+                                <h2>John Doe</h2>
+                            </div>
+                            <div class="wa__messages__contact-status">
+                                <p>Online</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="wa__messages__contact-icons">
+                        <div class="wa__messages__contact-icon">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </div>
+                        <div class="wa__messages__contact-icon">
+                            <i class="fa-solid fa-paperclip"></i>
+                        </div>
+                        <div class="wa__messages__contact-icon">
+                            <i class="fa-solid fa-ellipsis-vertical"></i>
+                        </div>
+                    </div>
+                </header>
+                <div class="wa__messages__body">
+                    <div class="wa__messages__message-container">
+                        <div class="wa__messages__message-wrapper">
+                            <div class="wa__messages__message-content">
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam,
+                                    quidem.</p>
+                            </div>
+                            <div class="wa__messages__message-time">
+                                <p>12:00</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="wa__messages__message-container wa__messages__message-container--sent ">
+                        <div class="wa__messages__message-wrapper wa__messages__message-wrapper--sent ">
+                            <div class="wa__messages__message-content">
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam,
+                                    quidem.</p>
+                            </div>
+                            <div class="wa__messages__message-time">
+                                <p>12:00</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="wa__messages__message-container">
+                        <div class="wa__messages__message-wrapper">
+                            <div class="wa__messages__message-content">
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam,
+                                    quidem.</p>
+                            </div>
+                            <div class="wa__messages__message-time">
+                                <p>12:00</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <footer class="wa__messages__footer">
+                    <div class="wa__messages__footer__emojies-icon">
+                        <i class="fa-regular fa-face-smile"></i>
+                    </div>
+                    <div class="wa__messages__footer__input-message">
+                        <input type="text" placeholder="Type a message...">
+                    </div>
+                    <div class="wa__messages__footer__audio-icon">
+                        <i class="fa-solid fa-microphone"></i>
+                    </div>
+                </footer>
+            </div>
+            <!-- / Messages section -->
+        </div>
+    </div>
 </body>
 
 </html>
