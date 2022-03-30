@@ -32,6 +32,10 @@ const whatsApp = new Vue({
       let lastMessage = contact.messages[contact.messages.length - 1];
       return lastMessage.message;
     },
+    lastMessageData: function (contact) {
+      let lastMessage = contact.messages[contact.messages.length - 1];
+      return this.editDateToTime(lastMessage.date);
+    },
     activeThisContact: function (contact) {
       this.activeContact = contact;
       this.activeChat = contact.messages;
