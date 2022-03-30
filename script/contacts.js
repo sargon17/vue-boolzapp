@@ -5,7 +5,7 @@ const contacts = [
     visible: true,
     messages: [
       {
-        date: "10/01/2020 15:30:55",
+        date: "10/03/2020 15:30:55",
         message: "Hai portato a spasso il cane?",
         status: "sent",
       },
@@ -76,7 +76,7 @@ const contacts = [
         status: "sent",
       },
       {
-        date: "10/01/2020 15:50:00",
+        date: "10/02/2020 15:50:00",
         message: "Si, ma preferirei andare al cinema",
         status: "received",
       },

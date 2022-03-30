@@ -141,7 +141,8 @@
                         <i class="fa-regular fa-face-smile"></i>
                     </div>
                     <div class="wa__messages__footer__input-message">
-                        <input type="text" placeholder="Type a message...">
+                        <input type="text" placeholder="Type a message..." id="messageInput"
+                            @keyup.enter="getNewMessage()">
                     </div>
                     <div class="wa__messages__footer__audio-icon">
                         <i class="fa-solid fa-microphone"></i>
