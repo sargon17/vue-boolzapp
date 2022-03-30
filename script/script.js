@@ -25,16 +25,18 @@ const whatsApp = new Vue({
     activeChat: null,
   },
   methods: {
+    // this function create the template for the contact image
     imgTemplate: function (contact) {
       return `./img/avatar${contact.avatar}.jpg`;
     },
+    // this function check the last message
     lastMessage: function (contact) {
       let lastMessage = contact.messages[contact.messages.length - 1];
       return lastMessage.message;
     },
+    // this function edit the time format
     editDateToTime: function (date) {
       date = date.split(" ");
-
       let time = date[1].split(":");
       if (date.includes("PM")) {
         let hour = parseInt(time[0]) + 12;
@@ -42,6 +44,7 @@ const whatsApp = new Vue({
       }
       return `${time[0]}:${time[1]}`;
     },
+    // this function check the last recived message data
     lastRecivedMessageData: function (contact) {
       let lastMessage;
       let index = contact.messages.length - 1;
@@ -56,11 +59,12 @@ const whatsApp = new Vue({
       }
       return this.editDateToTime(lastMessage.date);
     },
-
+    // this function set the active contact and the active chat
     activeThisContact: function (contact) {
       this.activeContact = contact;
       this.activeChat = contact.messages;
     },
+    // this function read the message, add the message to the active chat and set the status to sent
     getNewMessage: function () {
       let newMessage = {
         date: new Date().toLocaleString(),
@@ -72,10 +76,12 @@ const whatsApp = new Vue({
       this.updateContact(this.activeContact);
       setTimeout(this.autoReply, 1000);
     },
+    // this function reorder the contact list
     updateContact: function (contact) {
       this.contacts.splice(this.contacts.indexOf(contact), 1);
       this.contacts.unshift(contact);
     },
+    //
     autoReply: function () {
       let newMessage = {
         date: new Date().toLocaleString(),
@@ -86,9 +92,7 @@ const whatsApp = new Vue({
       this.updateContact(this.activeContact);
     },
     userSearch: function () {
-      // let search = event.target.value.toLowerCase();
       let search = document.querySelector("#searchInput").value.toLowerCase();
-      console.log(search);
       let contacts = this.contacts;
       contacts.forEach((contact) => {
         if (contact.name.toLowerCase().includes(search)) {
