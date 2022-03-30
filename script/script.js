@@ -85,5 +85,18 @@ const whatsApp = new Vue({
       this.activeChat.push(newMessage);
       this.updateContact(this.activeContact);
     },
+    userSearch: function () {
+      // let search = event.target.value.toLowerCase();
+      let search = document.querySelector("#searchInput").value.toLowerCase();
+      console.log(search);
+      let contacts = this.contacts;
+      contacts.forEach((contact) => {
+        if (contact.name.toLowerCase().includes(search)) {
+          contact.visible = true;
+        } else {
+          contact.visible = false;
+        }
+      });
+    },
   },
 });

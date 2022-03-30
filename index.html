@@ -65,14 +65,15 @@
                 <div class="wa__contacts__search-section">
                     <div class="wa__contacts__search-section__input">
                         <i class="fa-solid fa-search"></i>
-                        <input type="text" placeholder="Cerca o inizia una nuova chat">
+                        <input type="text" placeholder="Cerca o inizia una nuova chat" id="searchInput"
+                            @keyup="userSearch">
                     </div>
                 </div>
                 <!-- / contacts serach section -->
                 <div class="wa__contacts__contacts-list-section">
                     <div class="wa__contacts__contacts-list">
                         <!-- contact card -->
-                        <div class="wa__contacts__contact-item" v-for="contact in contacts"
+                        <div class="wa__contacts__contact-item" v-for="contact in contacts" v-if="contact.visible"
                             @click="activeThisContact(contact)">
                             <div class="wa__contacts__contact-item__img">
                                 <img :src="imgTemplate(contact)" :alt="contact.name">
