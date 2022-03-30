@@ -32,18 +32,34 @@ const whatsApp = new Vue({
       let lastMessage = contact.messages[contact.messages.length - 1];
       return lastMessage.message;
     },
-    lastMessageData: function (contact) {
-      let lastMessage = contact.messages[contact.messages.length - 1];
+    editDateToTime: function (date) {
+      date = date.split(" ");
+
+      let time = date[1].split(":");
+      if (date.includes("PM")) {
+        let hour = parseInt(time[0]) + 12;
+        return `${hour}:${time[1]}`;
+      }
+      return `${time[0]}:${time[1]}`;
+    },
+    lastRecivedMessageData: function (contact) {
+      let lastMessage;
+      let index = contact.messages.length - 1;
+      while (lastMessage === undefined) {
+        let message = contact.messages[index];
+
+        if (message.status === "received") {
+          lastMessage = message;
+          break;
+        }
+        index--;
+      }
       return this.editDateToTime(lastMessage.date);
     },
+
     activeThisContact: function (contact) {
       this.activeContact = contact;
       this.activeChat = contact.messages;
-    },
-    editDateToTime: function (date) {
-      date = date.split(" ");
-      let time = date[1].split(":");
-      return `${time[0]}:${time[1]}`;
     },
     getNewMessage: function () {
       let newMessage = {
@@ -52,8 +68,6 @@ const whatsApp = new Vue({
         status: "sent",
       };
       this.activeChat.push(newMessage);
-      // console.log(this.activeContact);
-      // console.log(this.contacts);
       document.querySelector("#messageInput").value = "";
       this.updateContact(this.activeContact);
     },
