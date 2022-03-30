@@ -70,10 +70,20 @@ const whatsApp = new Vue({
       this.activeChat.push(newMessage);
       document.querySelector("#messageInput").value = "";
       this.updateContact(this.activeContact);
+      setTimeout(this.autoReply, 1000);
     },
     updateContact: function (contact) {
       this.contacts.splice(this.contacts.indexOf(contact), 1);
       this.contacts.unshift(contact);
+    },
+    autoReply: function () {
+      let newMessage = {
+        date: new Date().toLocaleString(),
+        message: "Ok",
+        status: "received",
+      };
+      this.activeChat.push(newMessage);
+      this.updateContact(this.activeContact);
     },
   },
 });
