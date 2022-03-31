@@ -116,5 +116,11 @@ const whatsApp = new Vue({
       console.log(message);
       this.activeChat.splice(this.activeChat.indexOf(message), 1);
     },
+    maxTextLenght: function (message) {
+      if (message.length > 35) {
+        return message.slice(0, 35) + "...";
+      }
+      return message;
+    },
   },
 });

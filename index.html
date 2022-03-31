@@ -83,7 +83,7 @@
                                 </div>
                                 <div class="wa__contacts__contact-item__last-message"
                                     v-if="contact.messages.length > 0">
-                                    <p>{{lastMessage(contact)}}</p>
+                                    <p>{{maxTextLenght(lastMessage(contact))}}</p>
                                 </div>
                             </div>
                             <div class="wa__contacts__contact-item__last-online" v-if="contact.messages.length > 0">
@@ -124,6 +124,11 @@
                     </div>
                 </header>
                 <div class="wa__messages__body">
+                    <div class="wa__messages__invitation-open-chat" v-if="!activeContact">
+                        <div class="wa__invitation-wrapper">
+                            <p>Scegli un dialogo</p>
+                        </div>
+                    </div>
                     <div :class="message.status === 'sent' ? 'wa__messages__message-container wa__messages__message-container--sent' : 'wa__messages__message-container'"
                         v-if="activeContact" v-for="message in activeChat" @mouseleave="message.isToolTipShown = false">
                         <div
