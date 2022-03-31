@@ -16,6 +16,23 @@
   font-size: 12px;
   color: var(--wa-text-black);
 }
+
+/* ---------------- Reusable Componenst------------------- */
+.wa__img__container {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+.wa__img__container img {
+  width: 100%;
+  aspect-ratio: 1;
+}
+/* ---------------- Reusable Componenst------------------- */
 /* ------------- BG ------------------ */
 .wa__bg {
   width: 100%;
@@ -78,21 +95,6 @@
   align-items: center;
   gap: 10px;
   padding: 0 10px;
-}
-/* todo riutilizzare immagine profilo */
-.wa__contacts__user-info__img {
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  background: #fff;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden;
-}
-.wa__contacts__user-info__img img {
-  width: 100%;
-  height: 100%;
 }
 .wa__contacts__user-info__name h2 {
   font-size: 1.2rem;
@@ -219,22 +221,6 @@
 .wa__contacts__contact-item:hover {
   background: var(--wa-bg-gray);
 }
-
-/* todo riutilizzare immagine profilo */
-.wa__contacts__contact-item__img {
-  width: 50px;
-  aspect-ratio: 1;
-  border-radius: 50%;
-  background: #fff;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden;
-}
-.wa__contacts__contact-item__img img {
-  width: 100%;
-  aspect-ratio: 1;
-}
 .wa__contacts__contact-item__data {
   width: 60%;
 }
@@ -280,20 +266,6 @@
   align-items: center;
   padding: 0 10px;
   gap: 10px;
-}
-/* todo riutilizzare immagine profilo */
-.wa__messages__contact-img-wrapper {
-  width: 10%;
-  aspect-ratio: 1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden;
-  border-radius: 50%;
-}
-.wa__messages__contact-img-wrapper img {
-  width: 100%;
-  height: 100%;
 }
 .wa__messages__contact-name h2 {
   font-size: 1.2rem;
