@@ -9,7 +9,6 @@
     <link rel="stylesheet" href="style/style.css">
     <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
 
-    <script src="script/script.js" defer type="module"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap"
@@ -73,8 +72,8 @@
                 <div class="wa__contacts__contacts-list-section">
                     <div class="wa__contacts__contacts-list">
                         <!-- contact card -->
-                        <div class="wa__contacts__contact-item" v-for="contact in contacts" v-if="contact.visible"
-                            @click="activeThisContact(contact)">
+                        <div class="wa__contacts__contact-item" v-for="contact in contacts"
+                            @click="activeThisContact(contact)" v-if="contact.visible">
                             <div class="wa__contacts__contact-item__img">
                                 <img :src="imgTemplate(contact)" :alt="contact.name">
                             </div>
@@ -153,6 +152,7 @@
             <!-- / Messages section -->
         </div>
     </div>
+    <script src="script/script.js" type="module"></script>
 </body>
 
 </html>

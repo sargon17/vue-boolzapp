@@ -81,7 +81,7 @@ const whatsApp = new Vue({
       this.contacts.splice(this.contacts.indexOf(contact), 1);
       this.contacts.unshift(contact);
     },
-    //
+    // function that auto replay to recived messages
     autoReply: function () {
       let newMessage = {
         date: new Date().toLocaleString(),
@@ -91,6 +91,7 @@ const whatsApp = new Vue({
       this.activeChat.push(newMessage);
       this.updateContact(this.activeContact);
     },
+    // function that allow to search a contact
     userSearch: function () {
       let search = document.querySelector("#searchInput").value.toLowerCase();
       let contacts = this.contacts;
