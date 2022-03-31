@@ -1,4 +1,5 @@
 import contactList from "./contacts.js";
+import user from "./userData.js";
 
 contactList.sort(function (a, b) {
   if (
@@ -20,6 +21,7 @@ contactList.sort(function (a, b) {
 const whatsApp = new Vue({
   el: "#app",
   data: {
+    user,
     contacts: contactList,
     activeContact: null,
     activeChat: null,
@@ -46,18 +48,20 @@ const whatsApp = new Vue({
     },
     // this function check the last recived message data
     lastRecivedMessageData: function (contact) {
-      let lastMessage;
-      let index = contact.messages.length - 1;
-      while (lastMessage === undefined) {
-        let message = contact.messages[index];
+      if (contact.messages.includes("received")) {
+        let lastMessage;
+        let index = contact.messages.length - 1;
+        while (lastMessage === undefined) {
+          let message = contact.messages[index];
 
-        if (message.status === "received") {
-          lastMessage = message;
-          break;
+          if (message.status === "received") {
+            lastMessage = message;
+            break;
+          }
+          index--;
         }
-        index--;
+        return this.editDateToTime(lastMessage.date);
       }
-      return this.editDateToTime(lastMessage.date);
     },
     // this function set the active contact and the active chat
     activeThisContact: function (contact) {
@@ -70,6 +74,7 @@ const whatsApp = new Vue({
         date: new Date().toLocaleString(),
         message: document.querySelector("#messageInput").value,
         status: "sent",
+        isToolTipShown: false,
       };
       this.activeChat.push(newMessage);
       document.querySelector("#messageInput").value = "";
@@ -87,6 +92,7 @@ const whatsApp = new Vue({
         date: new Date().toLocaleString(),
         message: "Ok",
         status: "received",
+        isToolTipShown: false,
       };
       this.activeChat.push(newMessage);
       this.updateContact(this.activeContact);
@@ -102,6 +108,10 @@ const whatsApp = new Vue({
           contact.visible = false;
         }
       });
+    },
+    deleteThisMessage: function (message) {
+      console.log(message);
+      this.activeChat.splice(this.activeChat.indexOf(message), 1);
     },
   },
 });
