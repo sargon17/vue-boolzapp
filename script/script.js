@@ -48,20 +48,23 @@ const whatsApp = new Vue({
     },
     // this function check the last recived message data
     lastRecivedMessageData: function (contact) {
-      if (contact.messages.includes("received")) {
-        let lastMessage;
-        let index = contact.messages.length - 1;
-        while (lastMessage === undefined) {
-          let message = contact.messages[index];
+      console.log(contact);
 
-          if (message.status === "received") {
-            lastMessage = message;
-            break;
-          }
-          index--;
+      let lastMessage;
+
+      let index = contact.messages.length - 1;
+      while (lastMessage === undefined) {
+        let message = contact.messages[index];
+
+        if (message.status === "received") {
+          lastMessage = message;
+          break;
         }
-        return this.editDateToTime(lastMessage.date);
+        index--;
       }
+      lastMessage = this.editDateToTime(lastMessage.date);
+
+      return lastMessage;
     },
     // this function set the active contact and the active chat
     activeThisContact: function (contact) {

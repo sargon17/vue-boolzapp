@@ -147,7 +147,8 @@
                                         <p>Message Information</p>
                                     </div>
                                 </div>
-                                <div class="wa__messageTooltip__content" @click="deleteThisMessage(message)">
+                                <div class="wa__messageTooltip__content" @click="deleteThisMessage(message)"
+                                    v-if="message.status === 'sent'">
                                     <div class="messageTooltip__content__icon">
                                         <i class="fa-solid fa-trash"></i> </div>
                                     <div class="messageTooltip__content__text">
